@@ -1,0 +1,13 @@
+name = "simulationQP934"
+uuid = "956b24ad-a35e-4d4f-bce6-a454a5411873"
+authors = ["viniciuspiccoli <viniciuspiccoli2008@hotmail.com> and contributors"]
+version = "0.1.0"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
