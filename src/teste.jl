@@ -9,13 +9,18 @@ include("./linkedlist.jl")
 include("./initial-point.jl")
 include("./upair.jl")
 include("./utotal.jl")
-
+include("./utotal_parallel.jl")
 
 data = Data();
 box = initial_point(data);
 nc, fatm, natm = linkedlist(box,data);
 
-println(utotal(box, data, fatm, natm, nc))
+using BenchmarkTools, Test
+
+@btime utotal($box, $data, $fatm, $natm, $nc)
+@btime utotal_parallel($box, $data, $fatm, $natm, $nc)
+
+
 #println(utotal(box,data))
 
 
