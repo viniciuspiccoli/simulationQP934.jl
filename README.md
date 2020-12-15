@@ -11,7 +11,7 @@ Usage:
 To use the default data for the simulation use
 
 ```
-data = DATA();
+data = Data();
 
 ```
 
