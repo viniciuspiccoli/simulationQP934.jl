@@ -1,7 +1,9 @@
+using ProgressMeter
+
 # energy calculation using linked lists method
 function utotal(box, DATA, first_atom, next_atom, nc)
   Ut  = 0.
-  for iat in 1:DATA.N
+@showprogress 1 "Computing potential energy"  for iat in 1:DATA.N
     icell = trunc(Int64,box[iat][1]/DATA.cutoff) + 1
     jcell = trunc(Int64,box[iat][2]/DATA.cutoff) + 1
     for i in icell-1:icell+1
