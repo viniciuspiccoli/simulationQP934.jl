@@ -26,3 +26,5 @@
    return sqrt(dx^2)
  end
 
+export pbcseparation
+

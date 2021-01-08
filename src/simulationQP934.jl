@@ -24,5 +24,8 @@ module simulationQP934
   include("./utotal_parallel2.jl") # total energy calculated using paralelization
   export utotal_parallel2
 
+  # force calculation
+  include("./fpair.jl")
+  export fpair
 
 end
