@@ -15,6 +15,10 @@ using Parameters
   eps4 :: Float64 = 4*eps
   sig6 :: Float64 = sig^6
   sig12 :: Float64 = sig^12
+  
+  # Data for computation of fpair
+  rep :: Float64 = 48 * eps * sig12       
+  att :: Float64 = 24 * eps * sig6
 
 end
 

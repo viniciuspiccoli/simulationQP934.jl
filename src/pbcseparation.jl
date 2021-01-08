@@ -15,3 +15,14 @@
    return sqrt(d)
  end
 
+ function pbcseparation(x::Float64,y::Flot64,L)
+   dx = (y - x)%L   
+   if dx > L / 2
+     dx = dx - L
+   elseif dx < -L/2
+     dx = dx + L
+   end
+
+   return sqrt(dx^2)
+ end
+

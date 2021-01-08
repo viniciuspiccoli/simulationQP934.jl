@@ -16,4 +16,13 @@ module simulationQP934
   
   include("./utotal_parallel.jl") # total energy calculated using paralelization
   export utotal_parallel
+
+  # new parallel version
+  include("linear_index.jl" )
+  export linear_index
+
+  include("./utotal_parallel2.jl") # total energy calculated using paralelization
+  export utotal_parallel2
+
+
 end

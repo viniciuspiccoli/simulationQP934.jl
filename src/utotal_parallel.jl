@@ -24,6 +24,6 @@ function utotal_parallel(box, DATA, first_atom, next_atom, nc)
       end
     end
   end
-  return Ut 
+  return sum(Ut) 
 end
 
