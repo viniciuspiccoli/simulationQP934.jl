@@ -15,7 +15,7 @@
    return sqrt(d)
  end
 
- function pbcseparation(x::Float64,y::Flot64,L)
+ function pbcseparation(x::Float64,y::Float64,L)
    dx = (y - x)%L   
    if dx > L / 2
      dx = dx - L
