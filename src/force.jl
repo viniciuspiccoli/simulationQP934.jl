@@ -1,6 +1,20 @@
 # force calculation using linked lists method
-function utotal(box, DATA, first_atom, next_atom, nc)
-  Ut  = 0.
+
+
+#prreciso acertar isso daqui
+
+
+# f = [ [0. , 0.] for i in 1:data.N ]
+ fvec(data) = [ Vector{Float64}(undef,2) for i in 1:data.N ]
+
+function force!(box, DATA, frc, first_atom, next_atom, nc)
+  ut = 0.
+
+  for i in 1:length(frc)
+    frc[i][1] = 0.
+    frc[i][2] = 0. 
+  end
+  
   for iat in 1:DATA.N
     icell = trunc(Int64,box[iat][1]/DATA.cutoff) + 1
     jcell = trunc(Int64,box[iat][2]/DATA.cutoff) + 1
@@ -12,7 +26,10 @@ function utotal(box, DATA, first_atom, next_atom, nc)
           if jat > iat
             rij = pbcseparation(box[jat],box[iat],DATA.side)
             if rij <= 2.
-              Ut += upair(rij,DATA)
+              up,fp = fpair(box[jat], box[iat], rij, DATA)
+              frc[iat] .= frc[iat] .+ fp  
+              frc[jat] .= frc[jat] .- fp            
+              ut += up
             end
           end
           jat = next_atom[jat]
@@ -20,10 +37,10 @@ function utotal(box, DATA, first_atom, next_atom, nc)
       end
     end
   end
-  return Ut 
+  return ut 
 end
 
-
+export fvec, force!
 
 
 

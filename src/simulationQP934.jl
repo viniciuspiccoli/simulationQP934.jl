@@ -27,5 +27,7 @@ module simulationQP934
   # force calculation
   include("./fpair.jl")
   export fpair
+  
+  include("./force.jl") 
 
 end
