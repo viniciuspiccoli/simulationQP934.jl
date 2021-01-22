@@ -8,9 +8,9 @@ module simulationQP934
   export linkedlist 
   
   include("./initial-point.jl")
-  export initial_point         # initial configuration
+  export initial_point          # initial configuration
   
-  include("./upair.jl")        # lennard-jones energy between two particles
+  include("./upair.jl")         # lennard-jones energy between two particles
   include("./utotal.jl")
   export utotal
   
@@ -29,5 +29,11 @@ module simulationQP934
   export fpair
   
   include("./force.jl") 
+  include("./initial_velocity.jl")  
+
+  include("./MDINPUT.jl") 
+
+  include("mov_integration.jl")
+  export md
 
 end

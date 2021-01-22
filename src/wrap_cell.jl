@@ -1,7 +1,7 @@
   # wrap function -  using periodic boundary conditions to resize i and j of cells 
   function wrap_cell(dms,id,jd)  
-    i = dms[1]  
-    j = dms[2]
+    i = dms  
+    j = dms
    
     if id < 1
       while id < 1

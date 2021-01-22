@@ -8,6 +8,15 @@
     for iat in 1:DATA.N
       icell = trunc(Int64, box[iat][1]/DATA.cutoff) + 1      #  classification of each particle in a specific cell
       jcell = trunc(Int64, box[iat][2]/DATA.cutoff) + 1      #
+
+      if icell==0
+        icell = icell + 1
+      end
+     
+      if jcell ==0
+        jcell = jcell + 1 
+      end  
+       
       next_atom[iat] = first_atom[icell, jcell]         #    saving the next atom
       first_atom[icell, jcell] = iat                    #    saving the first atom
     end

@@ -1,10 +1,6 @@
 using simulationQP934
 using Test
 
-
-
-
-
 @testset "simulationQP934.jl" begin
     # Write your tests here.
     data = Data();
@@ -14,6 +10,7 @@ using Test
 
     upair,f = fpair(box[1],box[2],r,data)    
     @test upair \approx  -0.2955814601750326   
-
+    
+     
 
 end
