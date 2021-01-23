@@ -35,6 +35,16 @@ Total energy of the initial configuration:
 total_ener     =  utotal(box, data, fatm, natm, nc)
 
 ```
+To start a simulation it is required create a MDinput data structure and use the function md(). A file traj.xyz will be written during the simulation.
 
-...
+```
+
+input = MDinput()
+
+md(data,input)
+
+```
+
+
+
 
