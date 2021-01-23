@@ -11,10 +11,18 @@
 
       if icell==0
         icell = icell + 1
+      elseif icell< 0
+        while icell <= 0 
+          icell += 1
+         end
       end
      
       if jcell ==0
-        jcell = jcell + 1 
+        jcell = jcell + 1
+      elseif jcell < 0
+        while jcell <= 0
+          jcell = jcell + 1
+        end
       end  
        
       next_atom[iat] = first_atom[icell, jcell]         #    saving the next atom

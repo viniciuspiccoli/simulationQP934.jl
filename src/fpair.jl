@@ -14,22 +14,21 @@ function fpair(x,y,r,data)
   drdx1 = -(x[1]-y[1])/r
   drdx2 = -(x[2]-y[2])/r
 
-  # calculation for (dU(r)/dr)
-  dudr1 =  -(data.rep / r13)
-  dudr2 =  -(data.att / r7)
+  dudr1 = -12*(data.sig12/r13)
+  dudr2 = -6*(data.sig6/r7)
 
-  dfdr = - (dudr1 - dudr2) 
+  dfacdr =  data.eps4*(dudr1 - dudr2)
 
-  # calculatons of force components  
-  f1   =   dfdr * drdx1 
-  f2   =   dfdr * drdx2
-
-  f = (-f1,-f2)
-
-  # calculation of energy of interaction
-  upair = data.eps4*(data.sig12/r12 - data.sig6/r6)
+  upair = data.eps4*(data.sig12/r12 - data.sig6/r6)  
+  f = ( -dfacdr*drdx1, -dfacdr*drdx2 ) 
 
   return upair, f
 
 end
+
+
+
+
+
+
 
