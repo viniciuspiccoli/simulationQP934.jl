@@ -1,8 +1,8 @@
 function initial_velocity(N::Int64;T=298.15,R=8.3145,m=1.0)
   vel = [ [0.,0.] for i in 1:N]
-  angle = 2*pi*rand()
-
+ 
   for i in 1:N
+    angle = 2*pi*rand()
     px = rand()
     py = rand()
     vel[i][1] = sqrt(-(2*R*T/m)*log(1-px)) * angle       # velocity in the x axis 

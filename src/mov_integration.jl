@@ -24,8 +24,7 @@ function md(data::Data,MDinputs::MDinput)
 
   k = 1 
 
-#@showprogress 1 "Running - MD "  
-  for i in 1:nsteps
+@showprogress 1 "Running - MD " for i in 1:nsteps
     ut = force!(box, data, force_vec, fatm, natm, nc)
     times = times + dt
 
